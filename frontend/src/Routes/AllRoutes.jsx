@@ -16,6 +16,7 @@ import NotFound from "../components/NotFound";
 import PrivateRoutes from "./PrivateRoutes";
 import SavedJobs from "../Pages/SavedJobs";
 import UserPublicProfile from "../Pages/UserPublicProfile";
+import Interview from "../Pages/Interview";
 function AllRoutes() {
   return (
     <Routes>
@@ -59,6 +60,7 @@ function AllRoutes() {
           </PrivateRoutes>
         }
       />
+      <Route path="/interview-call" element={<Interview/>} />
       <Route path="/user-onboarding" element={<UserOnboaring />} />
       <Route path="/company-onboarding" element={<CompanyOnboarding />} />
       <Route path="/saved-jobs" element={<SavedJobs />} />
