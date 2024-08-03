@@ -25,16 +25,17 @@ function Signup() {
   const handleFormSubmission = (event) => {
     event.preventDefault();
 
-    const passwordPattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+    // const passwordPattern =
+    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
 
-    if (!passwordPattern.test(formData.password)) {
-      setErrorMessage(
-        "Password must include at least one uppercase letter, one lowercase letter, one digit, one special character, and be at least 6 characters long."
-      );
+    // if (!passwordPattern.test(formData.password)) {
+    //   setErrorMessage(
+    //     "Password must include at least one uppercase letter, one lowercase letter, one digit, one special character, and be at least 6 characters long."
+    //   );
 
-      resetErrorMessage();
-    } else if (formData.password !== formData.confirmPassword) {
+    //   resetErrorMessage();
+    // } else 
+    if (formData.password !== formData.confirmPassword) {
       setErrorMessage(
         "The passwords you entered don't match. Please check and try again."
       );
@@ -58,12 +59,13 @@ function Signup() {
 
     try {
       const res = await userService.signup(userData);
-      if (res.data.statusCode === 201) {
+      if (res.statusCode === 201) {
         const res = await userService.login({ email, password });
+        console.log(res);
         if (res.status === 200) {
           const userData = await userService.getCurrentUser();
           if (userData) {
-            console.log(userData);
+            console.log(userData.role);
             if (userData.role === "jobSeeker") {
               navigate("/user-onboarding");
             } else {

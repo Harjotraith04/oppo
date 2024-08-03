@@ -23,7 +23,7 @@ const cookieOptions = {
   sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   maxAge: 1000 * 60 * 60 * 24 * 7,
   domain:
-    process.env.NODE_ENV === "production" ? "noobnarayan.in" : "localhost",
+    process.env.NODE_ENV === "localhost",
 };
 
 const generateAccessAndRefereshTokens = async (userId) => {
@@ -73,9 +73,11 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(500, "Something went wrong while registering the user");
   }
 
+  console.log(createdUser);
+
   return res
     .status(201)
-    .json(new ApiResponse(201, {}, "User registered successfully"));
+    .json(new ApiResponse(201, {"statusCode": 201}, "User registered successfully"));
 });
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -112,7 +114,7 @@ const loginUser = asyncHandler(async (req, res) => {
     .json(
       new ApiResponse(
         200,
-        { accessToken, refreshToken },
+        { "status": 200, accessToken, refreshToken },
         "User login successful"
       )
     );
@@ -210,7 +212,15 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     return res.status(404).send();
   }
 
-  res.send(user);
+  return res
+    .status(200)
+    .json(
+    new ApiResponse(
+      200,
+      { "status": 200},
+      "User update successful"
+    )
+  );
 });
 
 const updateProfilePicture = asyncHandler(async (req, res) => {
