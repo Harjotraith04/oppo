@@ -1,5 +1,5 @@
 {
-  "name": "job-hunter",
+  "name": "opportunet",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -7,16 +7,9 @@
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/noobnarayan/job-hunter.git"
-  },
-  "author": "Narayan Das",
+  
+  "author": "Anikesh Kulal",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/noobnarayan/job-hunter/issues"
-  },
-  "homepage": "https://github.com/noobnarayan/job-hunter#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cloudinary": "^1.41.1",

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "./assets/media/heroImage.png";
+import sales from "../../assets/images/sales.gif"
 
 function Hero() {
   return (
@@ -20,7 +21,7 @@ function Hero() {
             , Receive your top new job matches directly in your inbox.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row gap-9 md:gap-14 items-center mt-10 md:mt-8 md:pl-20 pl-0">
+        <div className="flex flex-col md:flex-row gap-9 md:gap-14 items-center mt-10 md:mt-6 md:pl-20 pl-0">
           <Link to={"/signup"}>
             {
               <button className="py-3 px-5 border-2 border-black font-semibold text-gray-900 hover:scale-105 shadow-heroButton duration-150">
@@ -35,7 +36,10 @@ function Hero() {
             <a href="#">Download App</a>
           </p>
         </div>
-        <div className="mt-24 flex gap-8 items-center md:items-end justify-center md:justify-normal md:pl-20 pl-14 pb-9 md:pb-0 px-5 md:px-0 md:pt-5">
+        <div >
+        <iframe style={{ width: "100%", height: "400px" , marginRight: "16px"}} className="mt-16" src="https://lottie.host/embed/298686c6-9d2d-442e-b82b-993337a0b5dd/ZkfG9JA6IZ.json"></iframe>
+      </div>
+        <div className="mt-16 flex gap-8 items-center md:items-end justify-center md:justify-normal md:pl-20 pl-14 pb-9 md:pb-0 px-5 md:px-0 md:pt-5">
           <div className="py-3.5 w-20 border-2 border-black font-semibold text-gray-900 hover:scale-105 shadow-heroBox flex justify-center items-center">
             <i className="fa-regular fa-star text-4xl text-black"></i>
           </div>
@@ -46,6 +50,7 @@ function Hero() {
             </p>
           </div>
         </div>
+        
       </div>
       <div className=" hidden md:w-1/2 bg-green-500 md:flex items-center justify-center overflow-hidden">
         <img src={heroImage} className="w-11/12 ml-16 md:pt-44 " />

@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "./assets/media/JobHunter.png";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { userService } from "../services/userService";
 import { logout } from "../store/authSlice";
+import logo from "./assets/media/logo.png";
 
 function Navbar() {
   const navLinks = [
     {
       title: "Home",
       path: "/",
+    },
+    {
+      title: "Courses",
+      path: "/courses",
+    },
+    {
+      title: "Sheets",
+      path: "/sheets",
+    },
+    {
+      title: "Resume Helper",
+      path: "/resume",
     },
     {
       title: "Find Jobs",
@@ -58,9 +70,9 @@ function Navbar() {
             <img
               src={logo}
               className="w-10 rounded-lg mr-3"
-              alt="JobHunter Logo"
+              alt="OpportuNet Logo"
             />
-            / jobhunter
+            / opportuNet
           </Link>
         </div>
 
@@ -82,14 +94,14 @@ function Navbar() {
             return (
               <li
                 key={index}
-                className="lg:ml-8 text-base font-semibold lg:my-0 my-7"
+                className="lg:ml-8  font-semibold text-[15px] lg:my-0 my-7"
               >
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
                       ? activeStyle
-                      : "text-gray-500 hover:text-green-700"
+                      : "text-black-500 text-[15px] hover:text-green-700"
                   }
                 >
                   {link.title}

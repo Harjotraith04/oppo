@@ -1,5 +1,5 @@
-import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import React from "react";
 
 function TextEditor({
   label,
@@ -44,7 +44,7 @@ function TextEditor({
       )}
       <Editor
         id={id}
-        apiKey={import.meta.env.VITE_TINY_MCE_API}
+        apiKey='344jjzjfmh5spd8nx1zo1todgyeu0gw26lvpthzo2tt07rqf'
         value={value}
         onEditorChange={handleEditorChange}
         init={{
