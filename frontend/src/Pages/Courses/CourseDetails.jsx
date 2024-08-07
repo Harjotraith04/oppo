@@ -26,7 +26,7 @@ const CourseDetails = () => {
                 <div className='md:col-span-2'>
                     <div className="flex items-center gap-5">
                         <figure className='max-w-[400px] max-h-[400px]'>
-                            <img src={courseImg} alt="" className='w-full' />
+                            <img src={course.img} alt={courseImg} className='w-full' />
                         </figure>
 
                         <div>

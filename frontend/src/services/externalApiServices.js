@@ -72,17 +72,17 @@ async function searchCompanies(query) {
   }
 }
 
-async function searchUniversities(query) {
-  try {
-    const response = await axios.get(
-      `http://universities.hipolabs.com/search?name=${query}`
-    );
-    return response.data;
-  } catch (error) {
-    console.error("Failed to fetch data: ", error);
-    return [];
-  }
-}
+// async function searchUniversities(query) {
+//   try {
+//     const response = await axios.get(
+//       `http://universities.hipolabs.com/search?name=${query}`
+//     );
+//     return response.data;
+//   } catch (error) {
+//     console.error("Failed to fetch data: ", error);
+//     return [];
+//   }
+// }
 
 export const externalApiServices = {
   getAccessToken,

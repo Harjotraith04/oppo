@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import img from "../../assets/images/pic.svg";
 import heroImage from "./assets/media/heroImage.png";
-import sales from "../../assets/images/sales.gif"
 
 function Hero() {
   return (
     <div className="md:flex ">
       <div className=" md:w-1/2 bg-gray-200 ">
         <div className="flex flex-col pt-28 pl-8 md:pl-20 gap-6">
-          <p className=" font-semibold">_/ Get Hired</p>
+          <p className=" font-semibold">Get Hired </p>
           <div className="flex flex-col gap-4">
             <h2 className=" text-5xl font-bold">The Quickest way</h2>
             <h2 className=" text-5xl font-bold">to Hire!</h2>
@@ -32,12 +32,12 @@ function Hero() {
               </button>
             }
           </Link>
-          <p className="underline font-semibold text-gray-900">
+          {/* <p className="underline font-semibold text-gray-900">
             <a href="#">Download App</a>
-          </p>
+          </p> */}
         </div>
-        <div >
-        <iframe style={{ width: "100%", height: "400px" , marginRight: "16px"}} className="mt-16" src="https://lottie.host/embed/298686c6-9d2d-442e-b82b-993337a0b5dd/ZkfG9JA6IZ.json"></iframe>
+        <div className="mr-86" >
+        <iframe style={{ width: "100%", height: "400px" , marginLeft: "0px"}} className="mt-16" src={img}></iframe>
       </div>
         <div className="mt-16 flex gap-8 items-center md:items-end justify-center md:justify-normal md:pl-20 pl-14 pb-9 md:pb-0 px-5 md:px-0 md:pt-5">
           <div className="py-3.5 w-20 border-2 border-black font-semibold text-gray-900 hover:scale-105 shadow-heroBox flex justify-center items-center">

@@ -9,7 +9,6 @@ const SDEitem = ({item}) => {
 
     return (
         <>
-        
         <section>
             <div className='p-3 lg:p-5 rounded-[18px] border-2 border-solid border-[#D9DCE2] mb-5 cursor-default'>
                 <div className="flex items-center justify-between gap-5" onClick={toggleAccordion}>

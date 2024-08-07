@@ -3,7 +3,7 @@ import logo from "./assets/media/logo.png";
 function Footer() {
   return (
     <div className="md:flex justify-between py-12 border-t border-gray-300  ">
-      <div className="md:w-2/5 ml-6 md:ml-20 flex flex-col gap-2 py-4 md:py-0">
+      <div className="md:w-48 ml-6 md:ml-20 flex flex-col gap-2 py-4 md:py-0">
         <img src={logo} className="w-3/5 md:w-3/6" />
         <div className=" flex gap-3 text-2xl ml-3.5 text-gray-800">
           <i className="fa-brands fa-twitter cursor-pointer hover:text-green-500"></i>

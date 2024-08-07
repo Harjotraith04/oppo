@@ -12,6 +12,7 @@ export const courses = [
   {
     id: "01",
     name: "Web Development",
+    
     specialization: "INR 2999 (Audio)",
     avgRating: 4.8,
     totalRating: 272,
