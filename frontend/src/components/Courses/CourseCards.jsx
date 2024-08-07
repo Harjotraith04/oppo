@@ -6,7 +6,8 @@ import starIcon from '../../assets/images/Star.png';
 
 function CourseCards({course})  {
 
-    const { name, avgRating, totalRating, photo, specialization, totalStudents, hospital } = course;
+    const { id, name, avgRating, totalRating, photo, specialization, totalStudents, hospital } = course;
+
 
     return (
         <div className='p-3 lg:p-9 gap-3 '>
@@ -29,7 +30,7 @@ function CourseCards({course})  {
                     <p className='text-[14px] leading-6 font-[400] text-[#4E545F]'>At {hospital}</p>
                 </div>
 
-                <Link to='/courses/:id' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] flex items-center justify-center group hover:bg-[#388E3C] duration-500  hover:border-none'>
+                <Link to={'/courses/' + id } className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] flex items-center justify-center group hover:bg-[#388E3C] duration-500  hover:border-none'>
                     <BsArrowRight className='group-hover:text-white w-6 h-5' />
                 </Link>
             </div>
