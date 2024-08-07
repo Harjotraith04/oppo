@@ -40,6 +40,7 @@ function AllRoutes() {
       <Route path="/roadmap" element={<RoadMap/>} />
       <Route path="/sheets" element={<Training/>} />
       <Route path="/resume" element={<Resume/>} />
+      <Route path="/mock-interview" element={<MockInterviewPage/>} />
 
 
 
