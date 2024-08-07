@@ -36,12 +36,7 @@ function Hero() {
             <a href="#">Download App</a>
           </p> */}
         </div>
-<<<<<<< Updated upstream
-        <div className="mr-86" >
-        <iframe style={{ width: "100%", height: "400px" , marginLeft: "0px"}} className="mt-16" src={img}></iframe>
-=======
         <div >
->>>>>>> Stashed changes
       </div>
         <div className="mt-16 flex gap-8 items-center md:items-end justify-center md:justify-normal md:pl-20 pl-14 pb-9 md:pb-0 px-5 md:px-0 md:pt-5">
           <div className="py-3.5 w-20 border-2 border-black font-semibold text-gray-900 hover:scale-105 shadow-heroBox flex justify-center items-center">
