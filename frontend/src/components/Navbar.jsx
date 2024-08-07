@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { userService } from "../services/userService";
@@ -6,19 +6,28 @@ import { logout } from "../store/authSlice";
 import logo from "./assets/media/logo.png";
 
 function Navbar() {
+  const dropdownRef = useRef(null);
   const navLinks = [
     {
       title: "Home",
       path: "/",
     },
     {
-      title: "Courses",
-      path: "/courses",
+      title: "Training", // New dropdown link
+      dropdown: [ // Dropdown items
+        { title: "Courses", path: "/courses" },
+        { title: "Sheets", path: "/sheets" },
+        { title: "Mock Interview", path: "/mock-interview-landing" },
+      ],
     },
-    {
-      title: "Sheets",
-      path: "/sheets",
-    },
+    // {
+    //   title: "Courses",
+    //   path: "/courses",
+    // },
+    // {
+    //   title: "Sheets",
+    //   path: "/sheets",
+    // },
     {
       title: "Resume Helper",
       path: "/resume",
@@ -36,10 +45,16 @@ function Navbar() {
       path: "/room",
     },
     {
-      title: "Mock Interview",
-      path: "/mock-interview-landing",
+      title: "Network",
+      path: "/network",
     },
+    // {
+    //   title: "Mock Interview",
+    //   path: "/mock-interview-landing",
+    // },
   ];
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const dispatch = useDispatch();
   const { status, userData } = useSelector((store) => store.auth);
   const [open, setOpen] = useState(false);
@@ -93,30 +108,36 @@ function Navbar() {
             style={{ color: "#3fb337" }}
           ></i>
         </div>
-        <ul
-          className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-20 " : "top-[-490px]"
-          }`}
-        >
-          {navLinks.map((link, index) => {
-            return (
-              <li
-                key={index}
-                className="lg:ml-8  font-semibold text-[15px] lg:my-0 my-7"
-              >
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    isActive
-                      ? activeStyle
-                      : "text-black-500 text-[15px] hover:text-green-700"
-                  }
-                >
+        <ul className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${open ? "top-20 " : "top-[-490px]"}`}>
+      {navLinks.map((link, index) => {
+        return (
+          <li key={index} className="lg:ml-8 font-semibold text-[15px] lg:my-0 my-7">
+            {link.dropdown ? ( // Check if dropdown exists
+              <>
+                <span onClick={() => setDropdownOpen((prev) => !prev)} className="cursor-pointer flex items-center ">
                   {link.title}
-                </NavLink>
-              </li>
-            );
-          })}
+                  <i className={`fa-solid fa-chevron-down ml-2 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}></i>
+                </span>
+                {dropdownOpen && (
+                  <ul className="absolute bg-white shadow-lg rounded-md mt-1 transition-opacity duration-200 opacity-100">
+                    {link.dropdown.map((subLink, subIndex) => (
+                      <li key={subIndex}>
+                        <NavLink to={subLink.path} className="block px-4 py-2 mt-3 text-[15px] text-gray-700 hover:bg-gray-200 rounded-md transition-colors duration-200">
+                          {subLink.title}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            ) : (
+              <NavLink to={link.path} className={({ isActive }) => isActive ? activeStyle : "text-black-500 text-[15px] hover:text-green-700"}>
+                {link.title}
+              </NavLink>
+            )}
+          </li>
+        );
+      })}
 
           {!status ? (
             <div className=" lg:flex ">

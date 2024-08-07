@@ -32,9 +32,6 @@ function Hero() {
               </button>
             }
           </Link>
-          {/* <p className="underline font-semibold text-gray-900">
-            <a href="#">Download App</a>
-          </p> */}
         </div>
         <div >
       </div>

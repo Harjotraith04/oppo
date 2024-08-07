@@ -25,6 +25,7 @@ import NotFound from "../components/NotFound";
 import PrivateRoutes from "./PrivateRoutes";
 import MockInterviewLanding from "../Pages/MockInterviewLanding";
 import SkillsDropdown from "../components/MockInterview/SkillsDropdown";
+import Networking from "../Pages/Networking";
 
 function AllRoutes() {
   return (
@@ -41,6 +42,8 @@ function AllRoutes() {
       <Route path="/roadmap" element={<RoadMap/>} />
       <Route path="/sheets" element={<Training/>} />
       <Route path="/resume" element={<Resume/>} />
+      <Route path="/network" element={<Networking/>} />
+
       <Route path="/mock-interview-landing" element={<MockInterviewLanding/>} />
       <Route path="/mock-interview-info" element={<SkillsDropdown/>} />
       <Route path="/mock-interview" element={<MockInterviewPage/>} />
