@@ -1,29 +1,28 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "../Pages/Home";
-import Login from "../components/LoginSignup/Login";
-import Signup from "../components/LoginSignup/Signup";
-import JobListing from "../Pages/JobListing";
-import JobDetails from "../Pages/JobDetails";
+import { Route, Routes } from "react-router-dom";
+import ApplicantInformation from "../Pages/ApplicantInformation";
 import CompaniesPage from "../Pages/CompaniesPage";
 import CompanyDashboard from "../Pages/CompanyDashboard";
-import UserProfile from "../Pages/UserProfile";
-import JobPosting from "../Pages/JobPosting";
-import ApplicantInformation from "../Pages/ApplicantInformation";
-import UserOnboaring from "../components/LoginSignup/UserOnboaring";
-import CompanyOnboarding from "../components/LoginSignup/CompanyOnboarding";
-import NotFound from "../components/NotFound";
-import PrivateRoutes from "./PrivateRoutes";
-import SavedJobs from "../Pages/SavedJobs";
-import UserPublicProfile from "../Pages/UserPublicProfile";
-import Interview from "../Pages/Interview";
 import Courses from "../Pages/Courses";
 import CourseDetails from "../Pages/Courses/CourseDetails";
-import RoadMap from "../Pages/RoadMap";
-import Sheets from "../Pages/Training/Training";
-import Training from "../Pages/Training/Training";
-import Resume from "../Pages/Resume";
+import Home from "../Pages/Home";
+import InterviewRoom from "../Pages/InterviewRoom";
+import JobDetails from "../Pages/JobDetails";
+import JobListing from "../Pages/JobListing";
+import JobPosting from "../Pages/JobPosting";
 import MockInterviewPage from "../Pages/MockInterviewPage";
+import Resume from "../Pages/Resume";
+import RoadMap from "../Pages/RoadMap";
+import SavedJobs from "../Pages/SavedJobs";
+import Training from "../Pages/Training/Training";
+import UserProfile from "../Pages/UserProfile";
+import UserPublicProfile from "../Pages/UserPublicProfile";
+import CompanyOnboarding from "../components/LoginSignup/CompanyOnboarding";
+import Login from "../components/LoginSignup/Login";
+import Signup from "../components/LoginSignup/Signup";
+import UserOnboaring from "../components/LoginSignup/UserOnboaring";
+import NotFound from "../components/NotFound";
+import PrivateRoutes from "./PrivateRoutes";
 
 function AllRoutes() {
   return (
@@ -40,6 +39,8 @@ function AllRoutes() {
       <Route path="/roadmap" element={<RoadMap/>} />
       <Route path="/sheets" element={<Training/>} />
       <Route path="/resume" element={<Resume/>} />
+      {/* <Route path="/room" element={<InterviewRoom/>} /> */}
+
       <Route path="/mock-interview" element={<MockInterviewPage/>} />
 
 
@@ -57,6 +58,14 @@ function AllRoutes() {
         element={
           <PrivateRoutes>
             <UserProfile />
+          </PrivateRoutes>
+        }
+      />
+      <Route
+        path="/room"
+        element={
+          <PrivateRoutes>
+            <InterviewRoom />
           </PrivateRoutes>
         }
       />

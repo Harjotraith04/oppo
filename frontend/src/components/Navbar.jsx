@@ -32,6 +32,10 @@ function Navbar() {
       path: "/companies",
     },
     {
+      title: "Interview Room",
+      path: "/room",
+    },
+    {
       title: "Mock Interview",
       path: "/mock-interview",
     },
