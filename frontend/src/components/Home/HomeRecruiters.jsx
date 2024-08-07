@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function HomeRecruiters() {
   return (
-    <div className="md:flex px-7 md:px-10 pb-8 font-Poppins h-[100svh]">
+    <div className="md:flex px-7 md:px-10 pb-8  font-Poppins h-[100svh]">
       <div className="md:w-1/2 px-3 md:px-16">
         <div>
           <p className="text-xl font-medium">NEED TALENT?</p>

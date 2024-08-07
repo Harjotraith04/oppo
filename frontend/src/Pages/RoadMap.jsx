@@ -45,25 +45,6 @@ const RoadMap = () => {
       <Overlay />
       </section>
 
-      <section>
-      <div className="mt-[30px]">
-                    <p className="text__para mt-0 font-semibold text-headingColor">Available Lecture Slots:</p>
-                    <ul className="mt-3">
-                        <li className="flex items-center justify-between mb-2">
-                            <p className='text-[15px] leading-6 text-textColor font-semibold'>Sunday</p>
-                            <p className='text-[15px] leading-6 text-textColor font-semibold'>9:00 AM to 1:30 PM</p>
-                        </li>
-                        <li className="flex items-center justify-between mb-2">
-                            <p className='text-[15px] leading-6 text-textColor font-semibold'>Tuesday</p>
-                            <p className='text-[15px] leading-6 text-textColor font-semibold'>4:00 PM to 9:30 PM</p>
-                        </li>
-                        <li className="flex items-center justify-between mb-2">
-                            <p className='text-[15px] leading-6 text-textColor font-semibold'>Friday</p>
-                            <p className='text-[15px] leading-6 text-textColor font-semibold'>1:30 PM to 6:30 PM</p>
-                        </li>
-                    </ul>
-                </div>
-      </section>
 
     </>
   );

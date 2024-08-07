@@ -25,6 +25,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        
         // light mode
         tremor: {
           brand: {
@@ -34,6 +35,7 @@ module.exports = {
             DEFAULT: colors.blue[500],
             emphasis: colors.blue[700],
             inverted: colors.white,
+
           },
           background: {
             muted: colors.gray[50],
