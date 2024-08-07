@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { getQuestions, evaluateAnswer } from '../../services/mockInterviewService.js';
 
-const MockInterviewLayout = ({ leftPanel, centerPanel, footer }) => {
+const MockInterviewLayout = ({leftPanel, centerPanel, footer }) => {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedQuestion, setSelectedQuestion] = useState(0);
   const [feedbackList, setFeedbackList] = useState([]);
 
 
-  // Need to fetch these from the user profile, I think it's already stored in local storage (maybe)
-  const skills = ["General Programming", "Devops", "Front-end", "Algorithms"];
-
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
+        const skills = JSON.parse(localStorage.getItem('selectedTopics'));
         const res = await getQuestions({ skills });
+        localStorage.removeItem('selectedTopics');
         setQuestions(res);
         setLoading(false);
         setFeedbackList(new Array(res.length).fill(null));

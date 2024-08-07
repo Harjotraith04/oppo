@@ -11,6 +11,7 @@ import JobDetails from "../Pages/JobDetails";
 import JobListing from "../Pages/JobListing";
 import JobPosting from "../Pages/JobPosting";
 import MockInterviewPage from "../Pages/MockInterviewPage";
+<<<<<<< Updated upstream
 import Resume from "../Pages/Resume";
 import RoadMap from "../Pages/RoadMap";
 import SavedJobs from "../Pages/SavedJobs";
@@ -23,6 +24,10 @@ import Signup from "../components/LoginSignup/Signup";
 import UserOnboaring from "../components/LoginSignup/UserOnboaring";
 import NotFound from "../components/NotFound";
 import PrivateRoutes from "./PrivateRoutes";
+=======
+import MockInterviewLanding from "../Pages/MockInterviewLanding";
+import SkillsDropdown from "../components/MockInterview/SkillsDropdown";
+>>>>>>> Stashed changes
 
 function AllRoutes() {
   return (
@@ -39,8 +44,13 @@ function AllRoutes() {
       <Route path="/roadmap" element={<RoadMap/>} />
       <Route path="/sheets" element={<Training/>} />
       <Route path="/resume" element={<Resume/>} />
+<<<<<<< Updated upstream
       {/* <Route path="/room" element={<InterviewRoom/>} /> */}
 
+=======
+      <Route path="/mock-interview-landing" element={<MockInterviewLanding/>} />
+      <Route path="/mock-interview-info" element={<SkillsDropdown/>} />
+>>>>>>> Stashed changes
       <Route path="/mock-interview" element={<MockInterviewPage/>} />
 
 

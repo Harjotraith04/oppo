@@ -8,7 +8,7 @@ import './Courses.css';
 function Courses() {
   return (
     <>
-    <section id="root1" className="mt-0 2xl:h-[800px]">
+    <section id="root1" className="h-[100svh]">
     {/* <h1 className="text-[30px] text-center text-[white]">Course Magazine</h1> */}
       
       <UI/>
@@ -24,7 +24,7 @@ function Courses() {
     
 
     <section className=" mt-0 bg-transparent">
-    <div className="container">
+    <div className="container max-w-8xl mx-auto">
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
         {courses.map((course)=>(
         <CourseCards key={course.id} course={course}/>

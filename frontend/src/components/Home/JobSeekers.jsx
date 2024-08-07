@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function JobSeekers() {
   return (
-    <div className="md:flex px-5 md:px-10 py-20 md:py-32 font-Poppins">
+    <div className="md:flex px-5 md:px-10 mb-20 md:py-32 font-Poppins h-[100svh]">
       <div className="md:w-1/2">
         <div className="sm:p-20 md:p-0">
           <img src={happyPeople} className=" md:w-11/12" />

@@ -37,7 +37,7 @@ function Navbar() {
     },
     {
       title: "Mock Interview",
-      path: "/mock-interview",
+      path: "/mock-interview-landing",
     },
   ];
   const dispatch = useDispatch();

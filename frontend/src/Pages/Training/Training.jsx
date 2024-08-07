@@ -24,9 +24,10 @@ const Training = () => {
 
   return (
     <>
-     <div>
+     <div className='flex flex-col lg:flex-row'>
       <Sidebar setActiveComponent={setActiveComponent} />  
-      <div className={`content ${activeComponent === 'DSA' ? 'active' : ''}`} style={{ backgroundColor: activeComponent === 'DSA' ? 'white' : 'inherit' }}>
+      <div className={`content ${activeComponent === 'DSA' ? 'active' : ''} w-full lg:w-3/4 px-5 h-[100svh] overflow-y-scroll`} style={{ backgroundColor: activeComponent === 'DSA' ? 'white' : 'inherit' }}
+      >
         {renderComponent()}  
       </div>
     </div>

@@ -12,24 +12,23 @@ const Sidebar = ({ setActiveComponent }) => {
 
 
   return (
-  
-    <div className="sidebar  text-white  rounded-2xl w-15 h-100 mt-48 "> 
-    <ul>
+    <div className="text-white bg-green-600 w-full lg:w-1/4 lg:h-[100svh] px-5 py-5"> 
+    <ul className='mt-24 flex flex-col gap-y-5'>
       <li 
         onClick={() => handleItemClick('DSA')} 
-        className={activeItem === 'DSA' ? 'active' : '' }
+        className={`${activeItem === 'DSA' ? 'underline underline-offset-4' : ''} cursor-pointer py-3 border border-white px-5 rounded-lg`}
       >
         DSA Sheet
       </li>  
       <li 
         onClick={() => handleItemClick('System')} 
-        className={activeItem === 'System' ? 'active' : ''} 
+        className={`${activeItem === 'System' ? 'underline underline-offset-4' : ''} cursor-pointer py-3 border border-white px-5 rounded-lg`}
       >
         System Design
       </li>  
       <li 
         onClick={() => handleItemClick('SDE')} 
-        className={activeItem === 'SDE' ? 'active' : ''} 
+        className={`${activeItem === 'SDE' ? 'underline underline-offset-4' : ''} cursor-pointer py-3 border border-white px-5 rounded-lg`}
       >
         SDE Core Sheet
       </li>  
