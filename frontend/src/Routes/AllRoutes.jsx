@@ -16,6 +16,8 @@ import NotFound from "../components/NotFound";
 import PrivateRoutes from "./PrivateRoutes";
 import SavedJobs from "../Pages/SavedJobs";
 import UserPublicProfile from "../Pages/UserPublicProfile";
+import MockInterviewPage from "../Pages/MockInterviewPage";
+
 function AllRoutes() {
   return (
     <Routes>
@@ -59,6 +61,7 @@ function AllRoutes() {
           </PrivateRoutes>
         }
       />
+      <Route path="/mock-interview" element={<MockInterviewPage />} />
       <Route path="/user-onboarding" element={<UserOnboaring />} />
       <Route path="/company-onboarding" element={<CompanyOnboarding />} />
       <Route path="/saved-jobs" element={<SavedJobs />} />

@@ -19,6 +19,10 @@ function Navbar() {
       title: "Companies",
       path: "/companies",
     },
+    {
+      title: "Mock Interview",
+      path: "/mock-interview",
+    },
   ];
   const dispatch = useDispatch();
   const { status, userData } = useSelector((store) => store.auth);
