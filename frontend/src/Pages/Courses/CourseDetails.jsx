@@ -1,14 +1,23 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import courseImg from '../../assets/images/App.png'
 import starIcon from '../../assets/images/Star.png'
 import CourseAbout from './CourseAbout'
 import Feedback from './Feedback'
 import SidePanel from './SidePanel'
 import Curriculum from './Curriculum'
+import courseData from './data/courseDetail.json'
 
 const CourseDetails = () => {
+
+    const { id } = useParams();
+    const course = courseData.find(course => course.id === parseInt(id));
+
     const [tab, setTab] = useState('about')
+
+    if (!course) {
+        return <div>Course not found</div>;
+    }
 
     return <section>
         <div className="max-w-[1170px] px-5 mx-auto mt-24">
@@ -21,14 +30,14 @@ const CourseDetails = () => {
                         </figure>
 
                         <div>
-                            <h3 className='text-[#181A1E] text-[22px] leading-9 mt-6 mb-9 font-bold'>App Development</h3>
+                            <h3 className='text-[#181A1E] text-[22px] leading-9 mt-6 mb-9 font-bold'>{course.name}</h3>
                             <span className='bg-[#CCF0F3] text-[#01B5C5] py-1 px-6 lg:py-2 lg:px-6 text-[12px] leading-6 lg:text-[16px] lg:leading-7 font-semibold rounde mt-16'>
-                            <strike>₹ 1999</strike> <span className='ml-2 text-[green]'>FREE</span>
+                            <strike>{course.price}</strike> <span className='ml-2 text-[green]'>FREE</span>
                             </span>
 
                             <div className="flex items-center gap-[6px] mt-16">
                                 <span className="flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-[#181A1E]">
-                                    <img src={starIcon} alt="" />4.8/5
+                                    <img src={starIcon} alt="" />{course.rating}
                                 </span>
                                 <span className='text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-[400] text-[#4E545F]'>(272)</span>
                             </div>

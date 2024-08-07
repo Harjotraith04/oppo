@@ -1,16 +1,21 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import courseData from './data/courseDetail.json'
+
 
 const CourseAbout = () => {
+    const { id } = useParams();
+    const course = courseData.find(course => course.id === parseInt(id));
+
+
     return <div>
         <div>
             <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
-                About of
-                <span className='text-[#01B5C5] font-bold text-[24px] leading-9'>App Development</span>
+                About
+                <span className='text-[#01B5C5] font-bold text-[24px] leading-9'>{course.name}</span>
             </h3>
-            <p className="text-[14px] leading-[30px] font-[400] text-[#4E545F] mt-[18px]">App development is the process of creating software applications for mobile devices, web platforms, or desktop environments. It typically involves several stages, including planning, design, coding, testing, and deployment. During the planning phase, developers outline the app's purpose, target audience, and features. This is followed by designing the user interface (UI) and user experience (UX) to ensure that the app is both visually appealing and easy to navigate. </p>
-            <p className="text-[14px] leading-[30px] font-[400] text-[#4E545F] mt-[18px]">Once the design is finalized, developers write the code using programming languages and frameworks suited for the chosen platform, such as Swift for iOS or Java for Android.
-                After coding, the app undergoes rigorous testing to identify and fix bugs, improve performance, and ensure compatibility across different devices and operating systems. Quality assurance is crucial in this phase to provide a seamless experience for users. Once the app passes testing, it is launched on platforms like the Apple App Store or Google Play Store, where users can download it. Post-launch, developers often gather user feedback to make improvements, release updates, and add new features, ensuring the app remains relevant and functional in a rapidly evolving technological landscape.
-            </p>
+            <p className="text-[14px] leading-[30px] font-[400] text-[#4E545F] mt-[18px]">{course.about1}</p>
+            <p className="text-[14px] leading-[30px] font-[400] text-[#4E545F] mt-[18px]">{course.about2}</p>
         </div>
 
         <div className="mt-12 mb-6">

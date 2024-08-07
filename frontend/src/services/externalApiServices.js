@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 
 // export const externalApiServices = {
 //   getAccessToken,
@@ -60,29 +60,29 @@
 //   }
 // }
 
-// async function searchCompanies(query) {
-//   try {
-//     const response = await axios.get(
-//       `https://autocomplete.clearbit.com/v1/companies/suggest?query=${query}`
-//     );
-//     return response.data;
-//   } catch (error) {
-//     console.error("Failed to fetch data: ", error);
-//     return [];
-//   }
-// }
+async function searchCompanies(query) {
+  try {
+    const response = await axios.get(
+      `https://autocomplete.clearbit.com/v1/companies/suggest?query=${query}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch data: ", error);
+    return [];
+  }
+}
 
-// async function searchUniversities(query) {
-//   try {
-//     const response = await axios.get(
-//       `http://universities.hipolabs.com/search?name=${query}`
-//     );
-//     return response.data;
-//   } catch (error) {
-//     console.error("Failed to fetch data: ", error);
-//     return [];
-//   }
-// }
+async function searchUniversities(query) {
+  try {
+    const response = await axios.get(
+      `http://universities.hipolabs.com/search?name=${query}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch data: ", error);
+    return [];
+  }
+}
 
 export const externalApiServices = {
   getAccessToken,
@@ -107,16 +107,16 @@ export async function searchSkills(query) {
   ];
 }
 
-export async function searchCompanies(query) {
-  // Mock data
-  return [
-    { id: 1, name: "Google" },
-    { id: 2, name: "Microsoft" },
-    { id: 3, name: "Apple" },
-    { id: 4, name: "Amazon" },
-    { id: 5, name: "Facebook" },
-  ];
-}
+// export async function searchCompanies(query) {
+//   // Mock data
+//   return [
+//     { id: 1, name: "Google" },
+//     { id: 2, name: "Microsoft" },
+//     { id: 3, name: "Apple" },
+//     { id: 4, name: "Amazon" },
+//     { id: 5, name: "Facebook" },
+//   ];
+// }
 
 export async function searchUniversities(query) {
   // Mock data
