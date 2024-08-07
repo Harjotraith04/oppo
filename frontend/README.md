@@ -1,2 +1,0 @@
-# job-hunter-frontend
-

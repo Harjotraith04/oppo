@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/media/JobHunter.png";
+import logo from "../assets/media/logo.png";
 import { userService } from "../../services/userService";
 import useUpdateUserData from "../../hooks/useUpdateUserData";
 
@@ -100,9 +100,9 @@ function Signup() {
           <img
             src={logo}
             className="w-10 rounded-lg mr-3"
-            alt="JobHunter Logo"
+            alt="opportuNet Logo"
           />
-          / jobhunter
+          / oppotuNet
         </Link>
       </div>
       <div className="flex flex-col sm:flex-row">

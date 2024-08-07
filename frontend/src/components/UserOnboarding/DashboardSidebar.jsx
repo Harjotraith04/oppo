@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import logo from "../assets/media/JobHunter.png";
+import logo from "../assets/media/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { userService } from "../../services/userService";
 import { logout } from "../../store/authSlice";
@@ -66,9 +66,9 @@ function DashboardSidebar() {
             <img
               src={logo}
               className="w-10 rounded-lg mr-3"
-              alt="JobHunter Logo"
+              alt="opportuNet Logo"
             />
-            <span className="hidden xl:block"> / jobhunter </span>
+            <span className="hidden xl:block"> / opportuNet </span>
           </Link>
         </div>
       </div>
