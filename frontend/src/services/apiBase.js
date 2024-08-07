@@ -6,13 +6,17 @@ const instance = axios.create({
   withCredentials: true,
 });
 
-export async function apiCall(method, url, data) {
+export async function apiCall(method, url, data = {}) {
   try {
-    const res = await instance[method](url, data);
+    const res = await instance.request({
+      method,
+      url,
+      data,
+    });
     console.log("Response from backend: ", res.data.data);
     return res.data.data;
   } catch (error) {
-    console.error(error);
+    console.error("Error on apiCall: ", error);
     throw error;
   }
 }

@@ -104,24 +104,24 @@ function JobPosting() {
       delete formData.urgent;
     }
 
-    for (let field in formData) {
-      if (field !== "description" && field !== "urgent" && !formData[field]) {
-        setDialog({
-          isOpen: true,
-          title: "Incomplete Form",
-          message:
-            "Please fill all the form details to generate job description.",
-          buttonText: "OK",
-        });
-        return;
-      }
-    }
+    // for (let field in formData) {
+    //   if (field !== "description" && field !== "urgent" && !formData[field]) {
+    //     setDialog({
+    //       isOpen: true,
+    //       title: "Incomplete Form",
+    //       message:
+    //         "Please fill all the form details to generate job description.",
+    //       buttonText: "OK",
+    //     });
+    //     return;
+    //   }
+    // }
     setGeneratingDescription(true);
     try {
       const res = await companyService.generateJobDescription(formData);
 
       setGeneratingDescription(false);
-      setFormData({ ...formData, description: res.data.data });
+      setFormData({ ...formData, description: res });
     } catch (error) {
       if (error.response.data.message.includes("Quota exceeded")) {
         setDialog({
@@ -152,7 +152,7 @@ function JobPosting() {
     setSubmitting(true);
 
     try {
-      const res = await companyService.postNewJob(formData);
+      await companyService.postNewJob(formData);
       setDialog({
         isOpen: true,
         title: "Job Posting Successful",
@@ -161,6 +161,7 @@ function JobPosting() {
         onClose: () => navigate("/dashboard/home"),
       });
     } catch (error) {
+      console.log("Error posting job", error);
       setDialog({
         isOpen: true,
         title: "Error Posting Job",
@@ -308,7 +309,7 @@ function JobPosting() {
                 id="location"
                 value={formData.location}
                 onChange={handleInputChange}
-                placeholder="E.g., 'Bengaluru, India'"
+                placeholder="E.g., 'Mumbai, India'"
               />
             </div>
 

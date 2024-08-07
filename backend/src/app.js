@@ -26,7 +26,7 @@ import mockInterviewRouter from "./routes/mockInterview.routes.js";
 // routes declearation
 
 app.use("/api/v1/users", userRouter);
-app.use("/api/v1/", jobRouter);
+app.use("/api/v1", jobRouter);
 app.use("/api/v1/company/", companyRouter);
 app.use("/api/v1/mock-interview/", mockInterviewRouter);
 

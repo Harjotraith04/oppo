@@ -189,6 +189,7 @@ const postJob = asyncHandler(async (req, res, next) => {
   const company = await User.findById(_id);
   company.userProfile.jobListings.push(job._id);
   company.markModified("userProfile.jobListings");
+  console.log(company.userProfile.jobListings);
   await company.save();
 
   return res
