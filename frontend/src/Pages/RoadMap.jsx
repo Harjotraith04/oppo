@@ -4,7 +4,7 @@ import { EffectComposer, Noise } from "@react-three/postprocessing";
 import React, { useMemo } from 'react';
 import { Experience } from '../components/RoadMap/Experience';
 import { Overlay } from "../components/RoadMap/Overlay";
-import { PlayProvider, usePlay } from "../contexts/Play";
+import { usePlay } from "../contexts/Play";
 import './RoadMap.css';
 
 const RoadMap = () => {

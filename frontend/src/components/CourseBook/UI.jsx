@@ -110,6 +110,7 @@ export const UI = () => {
             <h2 className="shrink-0 text-white text-9xl font-extralight italic">
               Learn
             </h2>
+            
             <h2 className="shrink-0 text-white text-13xl font-bold">
               Practice
             </h2>
@@ -122,7 +123,7 @@ export const UI = () => {
               Data Science
             </h1>
             <h2 className="shrink-0 text-white text-8xl italic font-light">
-              Solve DSA Questions
+              DSA Questions
             </h2>
             <h2 className="shrink-0 text-white text-12xl font-bold">
               Three.js
