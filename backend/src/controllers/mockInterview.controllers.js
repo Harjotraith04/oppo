@@ -8,6 +8,11 @@ import { filterQuestions, gradeAnswer } from "../utils/Questions.js";
 export const getMockInterviewQuestions = asyncHandler(async (req, res) => {
     const { skills } = req.body;
 
+    if (skills == null) {
+        console.log("No skills provided, defaulting to General Programming");
+        skills = ['General Programming']
+    }
+
     const questions = await filterQuestions(skills);
 
     return res.status(200).json({

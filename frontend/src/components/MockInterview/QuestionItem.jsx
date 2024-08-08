@@ -19,16 +19,17 @@ const QuestionItem = ({ question, index, selectedQuestion, setSelectedQuestion, 
   return (
     <li className="question-item">
       <div
-        className={`flex items-center gap-2 p-2 rounded-md cursor-pointer ${
-          selectedQuestion === index ? 'bg-muted/50 border border-black p-2' : 'hover:bg-muted/50'
-        }`}
+        className={`flex items-center gap-2 p-2 rounded-md cursor-pointer ${selectedQuestion === index ? 'bg-muted/50 border border-black p-2' : 'hover:bg-muted/50'
+          }`}
         onClick={handleQuestionClick}
       >
         <PlayIcon className={`w-4 h-4 ${selectedQuestion === index ? 'text-primary' : 'text-muted-foreground'}`} />
         <span className="font-medium">{index + 1}.</span>
-        <span>{question.Question}</span>
+        <span className="question-text" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '200px' }}>
+          {question.Question}
+        </span>        
         <DownArrowIcon
-          className="ml-auto w-4 h-4 cursor-pointer"
+          className="ml-auto w-5 h-5 cursor-pointer"
           onClick={(e) => {
             e.stopPropagation();
             setShowFeedback(!showFeedback);

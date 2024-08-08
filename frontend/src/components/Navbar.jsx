@@ -69,19 +69,20 @@ function Navbar() {
     setProfilePicture(profilePicture);
   }, [userData]);
   const toggleDropdown = () => setIsOpen(!isOpen);
+  const navigate = useNavigate();
+
 
   const handleLogout = () => {
     userService
       .logout()
       .then(() => {
+        navigate("/");
         dispatch(logout());
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
-  const navigate = useNavigate();
 
   const activeStyle = "text-green-700 pb-4 border-b-2 border-green-700";
 
@@ -119,12 +120,14 @@ function Navbar() {
                   <i className={`fa-solid fa-chevron-down ml-2 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}></i>
                 </span>
                 {dropdownOpen && (
-                  <ul className="absolute bg-white shadow-lg rounded-md mt-1 transition-opacity duration-200 opacity-100">
+                  <ul className="absolute bg-white shadow-lg rounded-md mt-1 transition-opacity duration-200 opacity-100" >
                     {link.dropdown.map((subLink, subIndex) => (
-                      <li key={subIndex}>
+                      <li key={subIndex} >
+                        <span onClick={ () => setDropdownOpen((prev) => !prev) }>
                         <NavLink to={subLink.path} className="block px-4 py-2 mt-3 text-[15px] text-gray-700 hover:bg-gray-200 rounded-md transition-colors duration-200">
                           {subLink.title}
                         </NavLink>
+                        </span>
                       </li>
                     ))}
                   </ul>

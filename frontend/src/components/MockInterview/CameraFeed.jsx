@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
+import PlayIcon from './PlayIcon';
+
 
 const CameraFeed = ({ currentQuestion, onNext, onBack, getFeedback }) => {
     const videoRef = useRef(null);
@@ -83,11 +85,11 @@ const CameraFeed = ({ currentQuestion, onNext, onBack, getFeedback }) => {
         }
     };
 
-    useEffect(() => {
-        if (currentQuestion?.Question) {
-            speakText(currentQuestion.Question);
-        }
-    }, [currentQuestion]);
+    // useEffect(() => {
+    //     if (currentQuestion?.Question) {
+    //         speakText(currentQuestion.Question);
+    //     }
+    // }, [currentQuestion]);
 
     const submitAnswer = () => {
         console.log(`Submitted Answer: ${recognizedText}`);
@@ -95,9 +97,21 @@ const CameraFeed = ({ currentQuestion, onNext, onBack, getFeedback }) => {
         setRecognizedText('');
     };
 
+    const handlePlayAudio = () => {
+        if (currentQuestion?.Question) {
+            speakText(currentQuestion.Question);
+        }
+    };
+
     return (
         <div className="w-full flex flex-col items-center">
-            <h1 className="text-2xl font-bold mb-4">{currentQuestion?.Question}</h1>
+            <div className="flex items-center mb-4">
+                <span onClick={handlePlayAudio} className='w-12'>
+                <PlayIcon className="w-6 h-6"></PlayIcon>
+                </span>
+                <h1 className="text-2xl font-bold">{currentQuestion?.Question}</h1>
+
+            </div>
             {isCameraOn ? (
                 <video ref={videoRef} autoPlay className="rounded-lg shadow-md mb-4"></video>
             ) : (

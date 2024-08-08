@@ -15,6 +15,7 @@ const SkillsDropdown = () => {
     const [selectedTopics, setSelectedTopics] = useState([]);
     const navigate = useNavigate();
     const topics = [
+        'General Programming',
         'Data Structures',
         'Web Development',
         'Databases and SQL',
