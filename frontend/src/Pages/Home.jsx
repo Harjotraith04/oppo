@@ -24,6 +24,7 @@ function Home() {
           <Testimonial />
         </div>
       </section>
+      
       <Footer />
     </div>
   );
